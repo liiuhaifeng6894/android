@@ -1,41 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffdf">
 
-    <EditText
-        android:id="@+id/et_name"
+    <TextView
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="94dp"
-        android:ems="10"
-        android:hint="name"
-        android:inputType="textPersonName" />
+        android:layout_marginLeft="30dp"
+        android:text="账户"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/et_name" />
+
+    <com.haifeng.view.ClearEditText
+        android:id="@+id/et_name"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_btn_bkg_gray"
+        android:drawableRight="@drawable/delete_selector"
+        android:hint="输入用户名"
+        android:singleLine="true"
+        app:layout_constraintLeft_toRightOf="@+id/tv_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="密码"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <EditText
         android:id="@+id/et_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_name"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_btn_bkg_gray"
         android:ems="10"
-        android:hint="password"
-        android:inputType="textPassword" />
+        android:hint="输入密码"
+        android:inputType="textPassword"
+        app:layout_constraintLeft_toRightOf="@+id/tv_password"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:text="LOGIN" />
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_btn_bkg_blue"
+        android:text="登陆"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <Button
-        android:layout_alignParentEnd="true"
         android:id="@+id/btn_clear"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btn_login"
-        android:text="CLEAR"
-        android:layout_alignParentRight="true" />
-</RelativeLayout>
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_btn_bkg_blue"
+        android:text="清除"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_password" />
+</android.support.constraint.ConstraintLayout>
